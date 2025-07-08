@@ -99,11 +99,11 @@ class CLLIterator():
             raise StopIteration
         return data                
 cll=CLL()
-cll.insert_at_start(20)
-cll.insert_at_start(40)
-cll.insert_at_last(30)
-cll.insert_at_last(10)
-cll.insert_after(cll.search(20),5)
+cll.insert_at_start(30)
+cll.insert_at_start(80)
+cll.insert_at_last(300)
+cll.insert_at_last(109)
+cll.insert_after(cll.search(30),5)
 for x in cll:
     print(x,end=' ')
 print()
