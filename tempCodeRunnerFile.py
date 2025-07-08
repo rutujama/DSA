@@ -100,14 +100,12 @@ class DLLiterator():
         self.current = self.current.next
         return data
 
-# ---------------- Test the DLL ----------------
-
 mylist = DLL()
-mylist.insert_at_first(30)
-mylist.insert_at_first(70)
-mylist.insert_at_last(90)
-mylist.insert_after(mylist.search(30), 80)
-mylist.print_list()  # Output: 70 30 80 90
+mylist.insert_at_first(40)
+mylist.insert_at_first(20)
+mylist.insert_at_last(900)
+mylist.insert_after(mylist.search(20), 70)
+mylist.print_list()  
 
 print("Using iterator:")
 for item in mylist:
