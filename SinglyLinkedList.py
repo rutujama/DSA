@@ -84,12 +84,12 @@ class SLLiterable():
         return data
                             
 mylist=SLL()
-mylist.insert_at_first(20)
-mylist.insert_at_first(10)
-mylist.insert_at_last(30)
-mylist.insert_after(mylist.search(20),25)
+mylist.insert_at_first(30)
+mylist.insert_at_first(60)
+mylist.insert_at_last(300)
+mylist.insert_after(mylist.search(30),125)
 mylist.print_list()
-mylist.delete_item(20)
+mylist.delete_item(60)
 print()
 mylist.print_list()
 print()
