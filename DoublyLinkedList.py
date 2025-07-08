@@ -3,6 +3,7 @@ class Node():
         self.prev = prev
         self.item = item
         self.next = next
+# Update to trigger Git tracking
 
 class DLL():
     def __init__(self, start=None):
@@ -99,14 +100,12 @@ class DLLiterator():
         self.current = self.current.next
         return data
 
-# ---------------- Test the DLL ----------------
-
 mylist = DLL()
 mylist.insert_at_first(30)
 mylist.insert_at_first(70)
 mylist.insert_at_last(90)
 mylist.insert_after(mylist.search(30), 80)
-mylist.print_list()  # Output: 70 30 80 90
+mylist.print_list()  
 
 print("Using iterator:")
 for item in mylist:
