@@ -7,3 +7,13 @@ class Deque:
         self.items.insert(0,data)
     def insert_rear(self,data):
         self.items.append(data) 
+    def delete_front(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")    
+        else:
+            self.items.pop[0]
+    def delete_rear(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")    
+        else:
+            self.items.pop[-1]    
