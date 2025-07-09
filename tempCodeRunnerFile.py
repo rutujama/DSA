@@ -1,34 +1,136 @@
-class Graph:
-    def __init__(self,vno):
-        self.vertex_count=vno
-        self.adj_matrix=[[0]*vno for e in range(vno)]
-    def add_edge(self,u,v,weight=1):
-        if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
-            self.adj_matrix[u][v]=weight
-            self.adj_matrix[u][v]=weight 
+class Node():
+    def __init__(self, prev=None, item=None, next=None):
+        self.prev = prev
+        self.item = item
+        self.next = next
+
+class DCLL():
+    def __init__(self, start=None):
+        self.start = start
+
+    def is_empty(self):
+        return self.start == None 
+
+    def insert_at_start(self, data):
+        n = Node(item=data)
+        if self.is_empty():
+            n.next = n
+            n.prev = n
         else:
-            print("invalid value")
-    def delete_edge(self,u,v):
-        if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
-            self.adj_matrix[u][v]=0
-            self.adj_matrix[u][v]=0 
+            n.next = self.start
+            n.prev = self.start.prev
+            self.start.prev.next = n 
+            self.start.prev = n 
+        self.start = n 
+
+    def insert_at_last(self, data):
+        n = Node(item=data)
+        if self.is_empty():
+            n.next = n 
+            n.prev = n 
+            self.start = n
         else:
-            print("invalid value")
-    def has_edge(self,u,v):
-        if 0<=u<self.vertex_count and 0<=v<self.vertex_count:
-            return self.adj_matrix[u][v]!=0
+            n.next = self.start
+            n.prev = self.start.prev
+            self.start.prev.next = n
+            self.start.prev = n 
+
+    def search(self, data):
+        temp = self.start
+        if temp == None:
+            return None
+        if temp.item == data:
+            return temp
+        temp = temp.next
+        while temp != self.start:
+            if temp.item == data:
+                return temp
+            temp = temp.next
+        return None          
+
+    def insert_after(self, temp, data):
+        if temp is not None:
+            n = Node(item=data)
+            n.next = temp.next
+            n.prev = temp             
+            temp.next.prev = n 
+            temp.next = n 
+
+    def print_list(self):
+        if not self.is_empty():
+            temp = self.start
+            if temp is not None:
+                print(temp.item, end=' ')
+                temp = temp.next 
+                while temp != self.start:
+                    print(temp.item, end=' ')
+                    temp = temp.next
+            print()
+
+    def delete_first(self):
+        if self.start is not None:
+            if self.start.next == self.start:
+                self.start = None 
+            else:
+                self.start.prev.next = self.start.next 
+                self.start.next.prev = self.start.prev
+                self.start = self.start.next                  
+
+    def delete_last(self):
+        if self.start is not None:
+            if self.start.next == self.start:
+                self.start = None
+            else: 
+                self.start.prev.prev.next = self.start 
+                self.start.prev = self.start.prev.prev
+
+    def delete_item(self, data):
+        if self.start is not None:
+            temp = self.start
+            if temp.item == data:
+                self.delete_first()
+            else:
+                temp = temp.next 
+                while temp != self.start:
+                    if temp.item == data:
+                        temp.next.prev = temp.prev 
+                        temp.prev.next = temp.next  
+                        break
+                    temp = temp.next
+
+    def __iter__(self):
+        return DCLLIteration(self.start)
+
+class DCLLIteration():
+    def __init__(self, start):
+        self.current = start 
+        self.count = 0
+        self.start = start
+
+    def __iter__(self):
+        return self 
+
+    def __next__(self):
+        if self.current == None:
+            raise StopIteration 
+        if self.current == self.start and self.count == 1:
+            raise StopIteration
         else:
-            print("invalid value")
-    def print_adj_matrix(self):
-        for row_list in self.adj_matrix:
-          print(" ".join(map(str,row_list)))
-g=Graph(5)
-g.add_edge(1,4)  
-g.add_edge(3,4)  
-g.add_edge(2,4)  
-g.add_edge(3,2)  
-g.add_edge(1,1)  
-g.print_adj_matrix()                
-        
-                
-                      
+            self.count = 1
+        data = self.current.item 
+        self.current = self.current.next
+        return data 
+
+
+# Testing
+dcll = DCLL()
+dcll.insert_at_start(120)
+dcll.insert_at_start(800)
+dcll.insert_at_last(502)
+dcll.insert_at_last(90) 
+dcll.insert_after(dcll.search(120), 10) 
+
+for x in dcll:
+    print(x, end=' ')
+print()
+dcll.print_list()

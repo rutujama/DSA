@@ -124,11 +124,11 @@ class DCLLIteration():
 
 # Testing
 dcll = DCLL()
-dcll.insert_at_start(20)
-dcll.insert_at_start(80)
-dcll.insert_at_last(50)
+dcll.insert_at_start(120)
+dcll.insert_at_start(800)
+dcll.insert_at_last(502)
 dcll.insert_at_last(90) 
-dcll.insert_after(dcll.search(20), 10) 
+dcll.insert_after(dcll.search(120), 10) 
 
 for x in dcll:
     print(x, end=' ')
