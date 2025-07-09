@@ -17,3 +17,13 @@ class Deque:
             raise IndexError("deque is empty")    
         else:
             self.items.pop[-1]    
+    def get_front(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")    
+        else:
+            return self.items[0]       
+    def get_rear(self):
+        if self.is_empty():
+            raise IndexError("deque is empty")    
+        else:
+            return self.items[-1]          
