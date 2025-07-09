@@ -23,10 +23,10 @@ class Graph:
         for row_list in self.adj_matrix:
           print(" ".join(map(str,row_list)))
 g=Graph(5)
-g.add_edge(1,4)  
 g.add_edge(3,4)  
+g.add_edge(1,4)  
 g.add_edge(2,4)  
-g.add_edge(3,2)  
+g.add_edge(4,2)  
 g.add_edge(1,1)  
 g.print_adj_matrix()                
         
