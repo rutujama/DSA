@@ -24,10 +24,10 @@ class Graph:
         for vertex ,n in self.adj_list.items():
             print("v",vertex,":",n)
 g=Graph(5)
-g.add_edge(4,1)
+g.add_edge(14,1)
 g.add_edge(3,1)                         
-g.add_edge(2,3)                         
-g.add_edge(2,1)        
+g.add_edge(2,2)                         
+g.add_edge(2,3)        
 g.add_edge(0,1) 
 g.print_adj_list()       
         
