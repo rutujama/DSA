@@ -15,3 +15,15 @@ class Queue():
             return self.items[0] 
         else:
             raise IndexError("queue is empty")     
+    def get_rear(self):
+        if not self.is_empty():
+            return self.items[-1] 
+        else:
+            raise IndexError("queue is empty")    
+    def size(self):
+        return len(self.items)
+q=Queue()
+try:
+    print(q.get_front())
+except IndexError as e:
+    print(e.args[0])    
