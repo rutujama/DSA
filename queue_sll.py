@@ -36,3 +36,16 @@ class Queue:
            raise IndexError("Queue is empty")   
         else:
             return self.rear.item                  
+    def size(self):
+        return self.item_count
+q=Queue()  
+try:
+    print(q.get_front())
+except IndexError as e:
+    print(e.args[0])      
+q.enqueue(10)      
+q.enqueue(30)                  
+q.enqueue(60) 
+q.enqueue(80) 
+q.enqueue(20)
+print("Front:",q.get_front(),"Rear:",q.get_rear())    
