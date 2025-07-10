@@ -26,4 +26,15 @@ q=Queue()
 try:
     print(q.get_front())
 except IndexError as e:
-    print(e.args[0])    
+    print(e.args[0])   
+q.enqueue(10)      
+q.enqueue(30)                  
+q.enqueue(60) 
+q.enqueue(80) 
+q.enqueue(20)
+print("Front:",q.get_front(),"Rear:",q.get_rear())
+try:
+    print(q.dequeue())
+    print("Number of element in queue:",q.size())
+except IndexError as e:
+    print(e.args[0])                           
