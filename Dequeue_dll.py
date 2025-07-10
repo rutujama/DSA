@@ -54,3 +54,13 @@ class deque:
             raise IndexError("deque is empty")
         else:
             return self.rear.item      
+    def size(self):
+        return self.item_count
+q=deque()
+q.insert_front(30) 
+q.insert_front(10) 
+q.insert_front(190) 
+q.insert_rear(50) 
+q.insert_rear(20)    
+print("Front:",q.get_front(),"Rear:",q.get_rear())
+print("Number of element in queue:",q.size())                                                                    
