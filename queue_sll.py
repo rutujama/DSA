@@ -26,3 +26,13 @@ class Queue:
         else:    
             self.front=self.front.next   
         self.item_count-=1    
+    def get_front(self):
+        if self.is_empty():
+           raise IndexError("Queue is empty")   
+        else:
+            return self.front.item
+    def get_rear(self):
+        if self.is_empty():
+           raise IndexError("Queue is empty")   
+        else:
+            return self.rear.item                  
