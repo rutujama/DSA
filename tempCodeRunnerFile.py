@@ -17,3 +17,12 @@ class Queue:
             self.rear.next=n 
         self.rear=n 
         self.item_count+=1 
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        elif self.front==self.rear:
+            self.front=None
+            self.rear=None
+        else:    
+            self.front=self.front.next   
+        self.item_count-=1    
