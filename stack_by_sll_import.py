@@ -17,3 +17,11 @@ class Stack():
             return self.sll.start.item 
     def size(self):
         return self.item_count 
+st1=Stack()
+st1.push(30) 
+st1.push(20) 
+st1.push(700)
+print("Element on top:",st1.peek())
+print("remove element on top:",st1.pop())  
+print("Element on top:",st1.peek())              
+print()        
