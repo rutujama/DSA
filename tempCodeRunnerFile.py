@@ -8,3 +8,15 @@ class Stack():
         self.item_count=0 
     def is_empty(self):
         return self.start==None 
+    def push(self,data):
+        n=Node(data,self.start)
+        self.start=n     
+        self.item_count+=1 
+    def pop(self):
+        if not self.is_empty():
+            data=self.start.item
+            self.start=self.start.next 
+            self.item_count-=1 
+            return data      
+        else:
+            raise IndexError("Stack is empty")
