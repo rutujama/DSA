@@ -26,4 +26,13 @@ class Stack():
         else:
             raise IndexError("Stack is empty")
     def size(self):
-        return self.item_count     
+        return self.item_count   
+st=Stack()
+st.push(30) 
+st.push(10) 
+st.push(40)                
+print("The number of element in stack:",st.size())
+print("The element on the top:",st.peek())
+print("The remove element",st.pop())
+print("The number of element in stack:",st.size())
+print("The element on the top:",st.peek())      
