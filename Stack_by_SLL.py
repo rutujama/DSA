@@ -20,3 +20,10 @@ class Stack():
             return data      
         else:
             raise IndexError("Stack is empty")
+    def peek(self):
+        if not self.is_empty():
+            return self.start.item 
+        else:
+            raise IndexError("Stack is empty")
+    def size(self):
+        return self.item_count     
