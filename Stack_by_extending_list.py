@@ -13,3 +13,7 @@ class Stack(list):
             return self[-1]
         else:
             raise IndexError("Stack is empty")  
+    def size(self):
+        return len(self)
+    def insert(self,index,data):
+        raise IndexError("Stack is empty")     
