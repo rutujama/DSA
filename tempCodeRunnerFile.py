@@ -17,3 +17,11 @@ class Stack(list):
         return len(self)
     def insert(self,index,data):
         raise IndexError("Stack is empty")     
+st1=Stack()
+st1.push(30) 
+st1.push(20) 
+st1.push(700)
+print("Element on top:",st1.peek())
+print("remove element on top:",st1.pop())  
+print("Element on top:",st1.peek())              
+print()    
