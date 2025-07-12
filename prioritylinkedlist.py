@@ -20,3 +20,13 @@ class priorityQueue:
             n.next = temp.next
             temp.next = n
         self.item_count += 1    
+    def is_empty(self):
+        return self.start is None
+
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        data = self.start.items
+        self.start = self.start.next
+        self.item_count -= 1
+        return data    
