@@ -30,3 +30,16 @@ class priorityQueue:
         self.start = self.start.next
         self.item_count -= 1
         return data    
+    def size(self):
+        return self.item_count
+
+# Test
+p = priorityQueue()
+p.push("tiger", 1)
+p.push("lion", 0)
+p.push("elephant", 4)
+p.push("dog", 3)
+p.push("cat", 2)
+
+while not p.is_empty():
+    print(p.pop())
