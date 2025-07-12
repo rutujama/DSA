@@ -7,3 +7,8 @@ class Stack(SLL):
     def pop(self):
         if not self.is_empty():
           self.delete_first()    
+    def peek(self):
+        if not self.is_empty():
+            return self.start.item
+    def size(self):
+        return len(self)          
