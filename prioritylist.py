@@ -14,3 +14,11 @@ class priorityQueue:
         return self.items.pop(0)[0]
     def size(self):
         return len(self.items)
+p=priorityQueue()
+p.push("tiger",1)
+p.push("lion",0)
+p.push("elephant",4)
+p.push("dog",3)
+p.push("cat",2)
+while not p.is_empty():
+    print(p.pop())    
