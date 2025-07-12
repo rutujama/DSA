@@ -8,3 +8,9 @@ class priorityQueue:
         return self.items.insert(index,(data,priority))
     def is_empty(self):
         return len(self.items)==0    
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("que is empty")
+        return self.items.pop(0)[0]
+    def size(self):
+        return len(self.items)
