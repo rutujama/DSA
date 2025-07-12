@@ -12,3 +12,11 @@ class Stack(SLL):
             return self.start.item
     def size(self):
         return len(self)          
+st1=Stack()
+st1.push(30) 
+st1.push(20) 
+st1.push(700)
+print("Element on top:",st1.peek())
+print("remove element on top:",st1.pop())  
+print("Element on top:",st1.peek())              
+print()          
