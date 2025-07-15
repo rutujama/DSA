@@ -7,6 +7,6 @@ def selection_sort(list1):
                 min_index=j
         list1[i],list1[min_index]=list1[min_index],list1[i]
         
-l=[90,54,34,23,45,67,89]
+l=[90,54,34,23,435,167,809]
 selection_sort(l)
 print(l)                
