@@ -8,7 +8,7 @@ def bubble_sort(list1):
                 flag=True
         if not flag:
             break
-l=[667,78,45,34,67,0]
+l=[667,78,45,304,67,10]
 bubble_sort(l)
 print(l)                
         

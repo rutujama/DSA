@@ -1,12 +1,14 @@
-def selection_sort(list1):
-    n=len(list1)
-    for i in range(n):
-        min_index=i
-        for j in range(i+1,n):
-            if list1[j]<list1[min_index]:
-                min_index=j
-        list1[i],list1[min_index]=list1[min_index],list1[i]
-        
-l=[90,54,34,23,435,167,809]
-selection_sort(l)
+def bubble_sort(list1):
+    flag=False
+    for i in range(1,len(list1)):
+        flag=False
+        for r in range(len(list1)-i):
+            if list1[r]>list1[r+1]:
+                list1[r],list1[r+1]=list1[r+1],list1[r]
+                flag=True
+        if not flag:
+            break
+l=[667,78,45,304,67,10]
+bubble_sort(l)
 print(l)                
+        
