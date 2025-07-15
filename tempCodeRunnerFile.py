@@ -6,7 +6,7 @@ def insertion_sort(list1):
             list1[j+1]=list1[j]
             j-=1
         list1[j+1]=temp
-l=[32,67,45,12,35,69]
+l=[32,67,450,122,135,69]
 insertion_sort(l)
 print(l)            
 
