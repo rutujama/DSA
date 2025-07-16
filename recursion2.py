@@ -18,9 +18,9 @@ def fact(n):
     if n==1:
         return 1
     return n*fact(n-1)
-print("factorial is:",fact(10))
+print("factorial is:",fact(15))
 def sqrN(n):
     if n==1:
         return 1
     return (n*(n+1)*(2*n+1))/6
-print("sqr of n:",sqrN(5)) 
+print("sqr of n:",sqrN(8)) 
