@@ -1,26 +1,31 @@
 def printN(n):
-    if n==1:
-        return 1
-    s=n+printN(n-1)
-    return s
-print("sum is:",printN(10))
-def oddS(n):
-    if n==1:
-        return 1
-    return 2*n-1+oddS(n-1)
-print("odd sum is:",oddS(18)) 
-def evenS(n):
-    if n==1:
-        return 1
-    return 2*n+evenS(n-1)
-print("even sum is:",evenS(16)) 
-def fact(n):
-    if n==1:
-        return 1
-    return n*fact(n-1)
-print("factorial is:",fact(15))
-def sqrN(n):
-    if n==1:
-        return 1
-    return (n*(n+1)*(2*n+1))/6
-print("sqr of n:",sqrN(8)) 
+    if n>=0:
+        printN(n-1)
+        print(n)
+printN(10)
+
+def reverseN(n):
+    if n>0:
+        print(n)
+        reverseN(n-1)
+reverseN(10)   
+def oddN(n):
+    if n>0:
+        oddN(n-1)
+        print(2*n-1)
+oddN(9)    
+def evenN(n):
+    if n>0:
+        evenN(n-1)
+        print(2*n)
+evenN(9) 
+def RoddN(n):
+    if n>0:
+        print(2*n-1)
+        RoddN(n-1)
+RoddN(9)  
+def RevenN(n):
+    if n>0:
+        print(2*n)
+        RevenN(n-1)
+RevenN(9)     

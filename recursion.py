@@ -2,7 +2,7 @@ def printN(n):
     if n>=0:
         printN(n-1)
         print(n)
-printN(8)
+printN(10)
 
 def reverseN(n):
     if n>0:
