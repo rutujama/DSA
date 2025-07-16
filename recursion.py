@@ -19,3 +19,13 @@ def evenN(n):
         evenN(n-1)
         print(2*n)
 evenN(9) 
+def RoddN(n):
+    if n>0:
+        print(2*n-1)
+        RoddN(n-1)
+RoddN(9)  
+def RevenN(n):
+    if n>0:
+        print(2*n)
+        RevenN(n-1)
+RevenN(9)     
